@@ -17,10 +17,11 @@ interface Colleague {
     contact: Contact;
 }
 
-interface Colleagues {
-    current: Colleague[];
-    former: Colleague[];
-}
+interface ColleagueHistory {
+    current: Colleague[],
+    former: Colleague[]
+  }
+  
 
 const friend1 : Friend = {
     name: "Paul Fleming",
@@ -65,7 +66,7 @@ const friend1 : Friend = {
     },
   };
 
-  const colleagues : Colleagues = {
+  export const colleagues : ColleagueHistory = {
     current: [colleague1, colleague2, colleague3],
     former: [],
   };
