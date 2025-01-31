@@ -52,9 +52,9 @@ function sortColleagues(
     return fullResult.slice(0, end)
 }
 // Test invocations
-console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension), 3));
-console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length), 1));
-console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length))); // NEW  
+// console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension), 3));
+// console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length), 1));
+// console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length))); // NEW  
 
 function findFriends(
     friendsArray: Friend[],
@@ -63,5 +63,15 @@ function findFriends(
     return friendsArray.filter(filterFn).map(friend => friend.name);
 }
 
-console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
-console.log(findFriends(friends, (friend) => friend.age < 35));
+// console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
+// console.log(findFriends(friends, (friend) => friend.age < 35));
+
+function addInterest(friend: Friend, interest: string): string[] {
+    if (!friend.interests) {
+        friend.interests = []; // 如果 interests 为空，则初始化为一个空数组
+    }
+    friend.interests.push(interest);
+    return friend.interests;
+}
+
+console.log(addInterest(friends[1], 'Politics'))
